@@ -6,7 +6,6 @@ VERSION = 12.0
 CC     = cc
 CFLAGS = -std=c11 -D_POSIX_C_SOURCE=200809L -Wall -Wextra -pedantic -O2
 LDLIBS = -s -lX11
-LDFLAGS= -static
 PREFIX = /usr
 
 SRC = devour.c
