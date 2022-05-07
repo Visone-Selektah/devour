@@ -14,6 +14,7 @@ void run_command(char **argv) {
   char *arg;
   char cmd[1024] = {0};
 
+  strcat(cmd, "$SHELL -i -c '");
   while ((arg = *++argv)) {
     while ((arg_char = *arg++)) {
       if (strchr(UNSAFE_CHARS, arg_char))
@@ -22,6 +23,7 @@ void run_command(char **argv) {
     }
     strcat(cmd, " ");
   }
+  strcat(cmd, "> /dev/null 2>&1; exit'");
   system(cmd);
 }
 
